@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>🎮 Game Store</h1>
+    <button id="cart-btn">🛒 Кошик (<span id="cart-count">0</span>)</button>
+</header>
+
+<main>
+    <div id="products" class="grid-container"></div>
+</main>
+
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Ваш кошик</h2>
+        <ul id="cart-items"></ul>
+        <p id="cart-total">Сума: 0 грн</p>
+        <button id="checkout-btn">Оплатити</button>
+    </div>
+</div>
+
+<div id="loader-container">
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>Обробка платежу...</p>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

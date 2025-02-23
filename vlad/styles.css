@@ -1,0 +1,336 @@
+/* Загальні стилі */
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Стилі для заголовків, тексту та навігації */
+header {
+    background: #1e1e2f;
+    color: #ff7043;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ff7043;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+/* Контейнер */
+.container {
+    padding: 0 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Кнопка кошика */
+.cart-btn {
+    background: #ff7043;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: auto;
+    transition: background-color 0.3s ease;
+}
+
+.cart-btn:hover {
+    background: #ff5722;
+}
+
+/* Секція головної сторінки */
+.hero {
+    background: url('./hero.webp') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    background-size: cover;
+    border-bottom: 4px solid #ff7043;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.cta-btn {
+    background: #ff7043;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 1.3em;
+    border-radius: 6px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #ff5722;
+}
+
+/* Стилі меню */
+.menu {
+    padding: 60px 20px;
+    text-align: center;
+    background: #ffffff;
+}
+
+section {
+    background: #ffffff;
+    padding: 20px;
+}
+
+#search-bar {
+    padding: 12px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1.1em;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item {
+    background: #fff;
+    margin: 15px;
+    padding: 25px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.menu-item h3 {
+    font-size: 1.4em;
+    margin: 15px 0;
+    color: #333;
+}
+
+.menu-item p {
+    font-size: 1.1em;
+    margin: 8px 0;
+    color: #555;
+}
+
+button {
+    background-color: #ff7043;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff5722;
+}
+
+/* Модальне вікно кошика */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-modal-content {
+    background: white;
+    padding: 40px;
+    width: 60%;
+    max-width: 550px;
+    text-align: center;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.close-cart {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 35px;
+    color: #ff7043;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-cart:hover {
+    color: #ff5722;
+}
+
+#cart-items {
+    margin-bottom: 25px;
+}
+
+#cart-total {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #1e1e2f;
+    color: #ff7043;
+    font-size: 1.1em;
+}
+
+/* Стилі для форми контакту */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.contact label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+    color: #333;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1.1em;
+}
+
+.contact button {
+    background-color: #ff7043;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #ff5722;
+}
+
+/* Адаптивні стилі */
+
+/* Для мобільних пристроїв */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+    .hero {
+        padding: 80px 20px;
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu-item {
+        width: 90%;
+        margin: 10px 0;
+    }
+    .cart-modal-content {
+        width: 80%;
+    }
+}
+
+/* Для планшетів */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .menu-items {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .menu-item {
+        width: 45%;
+    }
+    .cart-modal-content {
+        width: 70%;
+    }
+}

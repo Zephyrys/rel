@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ресторан Суші</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Головна</a></li>
+                <li><a href="#menu">Меню</a></li>
+                <li><a href="#about">Про нас</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+            <button id="cart-btn" class="cart-btn">Кошик</button>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <h1>Ресторан Суші</h1>
+            <p>Насолоджуйтесь найсвіжішими суші в місті!</p>
+            <a href="#menu" class="cta-btn">Переглянути меню</a>
+        </section>
+    <div class="container">
+        <section id="menu" class="menu">
+            <h2>Меню</h2>
+            <input type="text" id="search-bar" placeholder="Пошук...">
+            <div id="menu-items" class="menu-items"></div>
+        </section>
+    
+        <section id="about" class="about">
+            <h2>Про нас</h2>
+            <p>Ми - команда професіоналів, які готують для вас найкращі суші. Ресторан заснований у 2010 році...</p>
+        </section>
+    
+        <section id="contact" class="contact">
+            <h2>Контакти</h2>
+            <p>Адреса: вул. Суші, 10</p>
+            <p>Телефон: +38 (050) 123-45-67</p>
+            <form id="contact-form">
+                <label for="name">Ваше ім'я:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="message">Повідомлення:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Відправити</button>
+            </form>
+            <div id="form-message"></div>
+        </section>
+    </div>
+       
+    </main>
+    
+
+    <!-- Модальне вікно кошика -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+            <span id="close-cart" class="close-cart">&times;</span>
+            <h2>Кошик</h2>
+            <div id="cart-items"></div>
+            <p id="cart-total">Сума: 0 грн</p>
+            <button id="checkout-btn">Оформити замовлення</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ресторан Суші. Всі права захищені.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

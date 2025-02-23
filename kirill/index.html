@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авто та Комплектуючі</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="./5309351-hd_1280_720_25fps.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <header>
+        <div class="logo">
+            <h1>Авто та Комплектуючі</h1>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Пошук..." />
+        </div>
+        <div class="cart-icon">
+            <span id="cart-count"></span>
+        </div>
+        <button id="toggle-cart-button">Показати кошик</button>
+    </header>
+    
+    <main id="main-content">
+        <section id="about-us" class="about-us">
+            <div class="container">
+                <h2 class="section-title">Про нас</h2>
+                <p class="section-description">
+                    Ми – команда автомобільних ентузіастів, які захоплюються створенням інноваційних рішень для світу автопродажу.
+                    Наш магазин пропонує широкий вибір автомобілів та комплектуючих від провідних виробників, щоб кожен автолюбитель знайшов для себе ідеальний варіант.
+                    Ми не тільки продаємо, але й надаємо консультації та допомогу у виборі, обслуговуванні та ремонті автомобілів.
+                    Завдяки нашому багаторічному досвіду та партнерствам з найбільшими виробниками, ми гарантуємо високий рівень обслуговування та якість продукції.
+                </p>
+                <div class="our-values">
+                    <div class="value-item">
+                        <h3>Якість</h3>
+                        <p>Ми працюємо лише з перевіреними постачальниками та брендами, які гарантують довговічність і надійність своїх продуктів.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>Інновації</h3>
+                        <p>Ми постійно оновлюємо асортимент, впроваджуємо нові технології і слідкуємо за останніми тенденціями на ринку автоіндустрії.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>Доступність</h3>
+                        <p>Наші ціни доступні для широкого кола покупців. Ми також пропонуємо різні варіанти фінансування для наших клієнтів.</p>
+                    </div>
+                </div>
+                <div class="team">
+                    <h3>Наша команда</h3>
+                    <p>Ми – це команда фахівців з багаторічним досвідом у галузі автомобільної торгівлі та обслуговування. Наші консультанти завжди готові надати професійну консультацію і допомогти вам вибрати саме те, що потрібно для вашого автомобіля.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="products" id="products-list"></section>
+
+        <section class="cart" id="cart-section" style="display: none;">
+            <h2>Ваш кошик</h2>
+            <div id="cart-list"></div>
+            <p>Кількість товарів: <span id="cart-count-number">0</span></p>
+            <p id="cart-total">Сума: 0 грн</p>
+            <button id="checkout-button" disabled>Оформити замовлення</button>
+        </section>
+    </main>
+
+    <!-- Лоадер оплати -->
+    <div id="payment-loader" style="display: none;">Завантаження...</div>
+    <div id="payment-success" style="display: none;">Оплата успішна! Дякуємо за покупку!</div>
+    <div id="payment-fail" style="display: none;">Щось пішло не так. Спробуйте ще раз.</div>
+
+    <footer>
+        <p>&copy; 2025 Авто та Комплектуючі. Всі права захищені. <a href="https://auto.ria.com/uk/">Докладніше</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

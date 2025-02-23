@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магазин продуктів та випічки</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <h1>Ласкаво просимо до нашого магазину продуктів та випічки!</h1>
+    <p>Свіжі продукти та найкраща випічка щодня!</p>
+  </header>
+  
+  <nav>
+    <a href="#products">Продукти</a>
+    <a href="#cart" onclick="toggleCart()">Кошик</a>
+    <a href="#info">Інформація</a>
+    <a href="#reviews">Відгуки</a>
+  </nav>
+  
+  <div class="cart-container" onclick="toggleCart()">
+    <img class="cart-icon" src="./cart.png" alt="Кошик">
+    <span class="cart-count" id="cart-count">0</span>
+  </div>
+
+  <section id="products" class="catalog">
+    <h2>Наші продукти</h2>
+    <p>Ми пропонуємо широкий асортимент свіжих овочів та фруктів.</p>
+    <div class="container">
+      <!-- Картки продуктів будуть додані тут за допомогою JS -->
+    </div>
+  </section>
+  
+  
+  </section>
+  <section id="cart" class="cart" style="display:none;">
+    <h2>Ваш кошик</h2>
+    <div id="cart-items"></div>
+    <p>Загальна сума: <span id="total">0</span> грн</p>
+    <button onclick="openOrderForm()">Оформити замовлення</button> <!-- Кнопка для переходу до форми -->
+  </section>
+  
+  <section id="info" class="info">
+    <h2>Інформація</h2>
+    <p>Наш магазин пропонує тільки найсвіжіші продукти. Ми працюємо щодня з 8:00 до 20:00.</p>
+    <p>Адреса: вул. Центральна, 10, Київ</p>
+    <p>Телефон: +380 44 123 4567</p>
+  </section>
+  
+  <section id="reviews" class="reviews">
+    <h2>Відгуки</h2>
+    <p><strong>Олексій:</strong> Дуже смачні круасани! Рекомендую!</p>
+    <p><strong>Марія:</strong> Завжди купую тут фрукти, завжди свіже!</p>
+    <p><strong>Володимир:</strong> Великий вибір та приємні ціни.</p>
+  </section>
+  <section id="order" class="order" style="display: none;">
+    <h2>Оформлення замовлення</h2>
+    <form id="order-form">
+      <label for="name">Ім'я:</label>
+      <input type="text" id="name" name="name" required><br><br>
+      
+      <label for="address">Адреса доставки:</label>
+      <input type="text" id="address" name="address" required><br><br>
+      
+      <label for="phone">Телефон:</label>
+      <input type="tel" id="phone" name="phone" required><br><br>
+      
+      <button type="submit">Оформити замовлення</button>
+      <button type="button" onclick="closeOrderForm()">Закрити</button> <!-- Кнопка для закриття форми -->
+    </form>
+    <p id="order-success-message" style="color: green; display: none;">Ваше замовлення успішно оформлено!</p>
+  </section>
+  
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Besshop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img class="koshik" src="4295.png" alt="кошик">
+        <p class="logo">BESSHOP</p>
+        <div class="acount">👤</div>
+    </header>
+    
+    <main>
+        <div class="besttovar">
+            <p>Кращі товари тижня</p>
+            <div id="products-container"></div> 
+        </div>
+
+        <div class="cart-modal" id="cartModal">
+            <h2>Ваш кошик</h2>
+            <ul id="cartItems"></ul>
+            <p>Загальна сума: <span id="cartTotal">0</span> грн</p>
+            <button id="checkoutBtn">Оформити замовлення</button>
+            <button id="closeCart">Закрити</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Всі права захищені</p>
+        <p>Наш номер: 931759382</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
