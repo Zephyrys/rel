@@ -148,8 +148,10 @@ checkoutFormForm.addEventListener('submit', function (event) {
 		alert('Будь ласка, заповніть всі поля форми!')
 		return
 	}
+
 	
 	alert(`Дякуємо за замовлення! Ваше замовлення на суму ${totalPrice.textContent} грн буде доставлено за адресою: ${address}`)
+
 	
 	clearCart()
 	checkoutForm.classList.add('hidden')

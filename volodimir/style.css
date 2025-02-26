@@ -1,4 +1,4 @@
-/* Загальні стилі */
+
 body {
     background-color: #d46227;
     font-family: 'Helvetica Neue', sans-serif;
@@ -11,8 +11,10 @@ body {
     justify-content: flex-start;
     overflow-x: hidden;
 }
+html{
+    scroll-behavior: smooth;
+}
 
-/* Заголовок */
 .header {
     font-size: 70px;
     font-weight: 800;
@@ -23,7 +25,7 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Кнопки категорій */
+
 .categories {
     display: flex;
     gap: 15px;
@@ -45,7 +47,7 @@ body {
     background-color: #0c4e76;
 }
 
-/* Пошук */
+
 .search {
     width: 80%;
     max-width: 450px;
@@ -67,7 +69,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Контейнер для ігор */
+
 .game-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
@@ -76,7 +78,7 @@ body {
     margin: 0 auto;
 }
 
-/* Стилі карток гри */
+
 .game {
     background: #FFF6B3;
     padding: 20px;
@@ -117,7 +119,7 @@ justify-content: space-between;
     margin-bottom: 15px;
 }
 
-/* Кнопка покупки */
+
 .buy-button {
     font-family: 'Cursive', sans-serif;
     font-size: 18px;
@@ -144,7 +146,7 @@ main {
     margin-bottom: 100px;
 }
 
-/* Секція "Про нас" */
+
 .about-us {
     background-color: #ffffff;
     padding: 40px 20px;
@@ -168,7 +170,7 @@ main {
     line-height: 1.6;
 }
 
-/* Кошик */
+
 .cart {
     background-color: #f0f0f0;
     padding: 40px 20px;
@@ -223,9 +225,8 @@ footer b {
     display: block;
     margin-top: 10px;
 }
-/* Стилі для попапу */
 .popup {
-    display: none; /* Спочатку приховуємо попап */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -338,5 +339,89 @@ footer b {
 
     .cart p {
         font-size: 18px;
+    }
+}
+
+.info-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.info-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.info-nav a:hover {
+    background-color: #155E95;
+    color: white;
+}
+
+
+.info-section {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 40px 0;
+    border-radius: 10px;
+    max-width: 1000px;
+    width: 90%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-section h2 {
+    font-size: 36px;
+    color: #155E95;
+    margin-bottom: 15px;
+}
+
+.info-section p {
+    font-size: 20px;
+    color: #444;
+    line-height: 1.6;
+}
+
+
+@media (max-width: 768px) {
+    .info-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-nav a {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .info-section h2 {
+        font-size: 28px;
+    }
+
+    .info-section p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-nav a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .info-section h2 {
+        font-size: 24px;
+    }
+
+    .info-section p {
+        font-size: 16px;
     }
 }

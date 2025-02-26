@@ -134,6 +134,7 @@ function createProductCard(name, price) {
   return card;
 }
 
+// Завантаження продуктів на сторінку
 function loadProducts() {
   const catalogContainer = document.querySelector('#products .container');
   products.forEach(product => {
@@ -142,4 +143,5 @@ function loadProducts() {
   });
 }
 
+// Викликаємо функцію, щоб завантажити продукти після завантаження сторінки
 window.onload = loadProducts;

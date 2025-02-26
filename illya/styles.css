@@ -130,3 +130,70 @@ flex: 1 0  auto;
     100% { transform: rotate(360deg); }
 }
 
+/* Інформаційні блоки */
+.info-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.info-block {
+    width: 30%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+}
+
+.info-block h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ff6600;
+}
+
+.info-block p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+
+@media (max-width: 768px) {
+    .info-block {
+        width: 45%;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .info-block {
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

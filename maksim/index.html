@@ -3,66 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Інтернет-магазин</title>
+    <title>Магазин активного відпочинку</title>
     <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script>
 </head>
 <body>
+
     <header>
-        <h1>Інтернет-магазин</h1>
         <nav>
-            <ul>
-                <li><a href="#hero">Головна</a></li>
-                <li><a href="#about">Про нас</a></li>
-                <li><a href="#gallery">Галерея</a></li>
-                <li><a href="#products">Товари</a></li>
-            </ul>
-        </nav>
-        
-    </header>
-    <main>
-        <section id="hero">
-            <h2>Ласкаво просимо до нашого магазину!</h2>
-         
-        </section>
-    
-        <section id="about">
-            <h2>Про нас</h2>
-            <p>Ми - команда ентузіастів, які прагнуть забезпечити вас найкращими товарами.</p>
-        </section>
-    
-        <section id="gallery">
-            <h2>Галерея</h2>
-            <div class="gallery-container">
-                <img src="https://contents.mediadecathlon.com/p1786958/k$2b0a8a97ea3b1154f2f3734009451fe2/cholovichi-shtani-travel-100-dlya-podorozhej-siri.jpg?f=452x452" alt="Товар 1">
-                <img src="https://safari-ukraina.com/image/cache/catalog/image/cache/catalog/product/marmot/kurtka-marmot-mens-MRT-71540.2585_0-1000x1000.webp" alt="Товар 2">
-                <img src="https://a.allegroimg.com/original/11e936/b576bfa14baab79fff67d6b23cd8/KURTKA-TREKKINGOWA-DAMSKA-SALOMON-SOFTSHELL" alt="Товар 3">
+            <div class="search">
+                <input id="search" type="search" placeholder="Пошук...">
             </div>
-        </section>
+            <div class="navigation">
+                <a href="#about">
+                    Про нас
+                </a>
+                <a href="#products-container">Товари</a>
+                <a href="#delivery">Доставка</a>
+                <a href="#contacts">Контакти</a>
+            </div>
+            <div class="cart">
+                <button class="cart-button" onclick="toggleCart()">🛒 Кошик (<span id="cart-count">0</span>)</button>
+                <div id="cart-panel" class="cart-panel">
+                    <h2>Ваш кошик</h2>
+                    <ul id="cart-items"></ul>
+                    <button onclick="clearCart()">Очистити кошик</button>
+                    <button onclick="toggleCart()">Закрити</button>
+                </div>
+            </div>
+        </nav>
+    </header>
     
-        <div class="container">
-            <input type="text" id="search" placeholder="Пошук товарів..." oninput="searchProducts()">
-            <div id="products"></div>
+    <main>
+        <section class="info-section">
+            <div id="about" class="info-block">
+                <h2>Про нас</h2>
+                <p>Ми - магазин активного відпочинку, який пропонує якісне спорядження для туризму, альпінізму та активного способу життя. Наші товари допоможуть вам насолоджуватися природою з комфортом.</p>
+            </div>
+          
+        <div id="products-container"></div>
+        <div id="delivery" class="info-block">
+            <h2>Умови доставки</h2>
+            <p>Доставка по всій Україні здійснюється протягом 1-3 днів. Ми пропонуємо безкоштовну доставку для замовлень від 1000 грн. Також доступний самовивіз з нашого магазину.</p>
         </div>
-    
+        <div id="contacts" class="info-block">
+            <h2>Контакти</h2>
+            <p>Зв'яжіться з нами за телефоном: <strong>+380 123 456 789</strong> або напишіть на email: <strong>info@active-shop.com</strong>. Ми працюємо щодня з 9:00 до 18:00.</p>
+        </div>
+    </section>
+        
     </main>
+<div id="loader" class="loader">
+    <h2>Оплата</h2>
+    
+
+    <img src=" https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWt0aGFsajF2ZGZ3cjVuOGdod2hydHZmOWtnOWRoZGI2M3R2dW5haiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BK1EfIsdkKZMY/giphy.gif" alt="Loading...">
    
-    <div class="cart-panel" id="cart-panel">
-        <button class="close-cart-btn" onclick="toggleCart()">Закрити кошик</button>
-        <h3>Кошик</h3>
-        <ul id="cart-list"></ul>
-        <button class="checkout-btn" id="checkout-btn" onclick="processPayment()">Оформити замовлення</button>
-    </div>
-    <button id="cart-toggle-btn" onclick="toggleCart()">🛒</button>
+</div>
+<div id="order-success" class="order-success">
+    <h2>Дякуємо за замовлення!</h2>
+    <p>Ваше замовлення успішно оформлено. Ми зв'яжемося з вами найближчим часом.</p>
+    <button onclick="closeOrderSuccess()">Закрити</button>
+</div>
 
-    <div id="overlay"></div>
-    <div class="cat-gif">
-        <img src="https://media3.giphy.com/media/BK1EfIsdkKZMY/giphy.gif" alt="Loading...">
+    <div id="fullscreen-modal" class="fullscreen-modal">
+        <div class="modal-content">
+            <img id="fullscreen-img" src="" alt="">
+            <h2 id="product-title"></h2>
+            <p id="product-description"></p>
+            <button onclick="closeFullscreen()">Закрити</button>
+        </div>
     </div>
-    <div id="payment-success">Оплата успішна! Ваш кошик порожній.</div>
 
-    <footer>
-        <p>&copy; 2025 Інтернет-магазин. Всі права захищені.</p>
-    </footer>
-    <script src="./script.js"> </script>
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePaymentModal()">×</span>
+            <h2>Оформити замовлення</h2>
+            <p>Виберіть спосіб оплати:</p>
+            
+            <form id="payment-form">
+                <input type="text" placeholder="Ваше ім'я" required><br>
+                <input type="text" placeholder="Номер картки" required><br>
+                <input type="date" placeholder="Дата закінчення" required><br>
+                <input type="text" placeholder="CVV" required><br>
+                
+                <button type="submit" class="pay-btn">Платити</button>
+            </form>
+        </div>
+    </div>
+
+    <footer></footer>
+
 </body>
 </html>

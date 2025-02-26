@@ -4,7 +4,7 @@ const products = [
     { id: 2, name: 'BMW M3', price: 800000, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0f_JHF4KgtomD4QEueRa7n7R7n7AidPfv0A&s' },
     { id: 3, name: 'Audi A8', price: 950000, image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/2018_Audi_A8_50_TDi_Quattro_Automatic_3.0.jpg/1200px-2018_Audi_A8_50_TDi_Quattro_Automatic_3.0.jpg' },
     { id: 4, name: 'Mercedes-Benz C-Class', price: 600000, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaWUNS5nBMVAPhqm03uqfP4IYk8AVCYZimdw&s' },
-    { id: 5, name: 'Porsche 911', price: 1200000, image: 'https://mezha.media/wp-content/uploads/2024/05/foto-2-1-5-900x600.jpg' },
+    { id: 5, name: 'Porsche 911', price: 1200000, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJw5Zm9btooqdfPC5_T6GMRg9PPfK3u02hjA&s' },
     { id: 6, name: 'Lamborghini Huracan', price: 2500000, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV_hUNJ5FuVoGDnRf2oMlWbv7exBlaysduTA&s' },
     { id: 7, name: 'Ford Mustang', price: 750000, image: 'https://media.ed.edmunds-media.com/ford/mustang/2025/oem/2025_ford_mustang_coupe_dark-horse_fq_oem_1_1600.jpg' },
     { id: 8, name: 'Chevrolet Camaro', price: 700000, image: 'https://avtoradio.ua/uploads/summernote/photos/shares/658456a8182a4.jpg' },
@@ -74,27 +74,36 @@ function processPayment() {
     paymentLoader.style.display = 'block';
     setTimeout(() => {
         paymentLoader.style.display = 'none';
-        if (Math.random() > 0.5) {
+        if(cart.length<1){
+            paymentFail.style.display = 'block';
+        }
             paymentSuccess.style.display = 'block';
             setTimeout(() => {
                 paymentSuccess.style.display = 'none';
                 cart = [];
                 updateCartUI();
             }, 2000);
-        } else {
-            paymentFail.style.display = 'block';
-            setTimeout(() => {
-                paymentFail.style.display = 'none';
-            }, 2000);
-        }
-    }, 2000);
+        },
+   2000);
+}
+// Функція для пошуку товарів
+function searchProducts(query) {
+    const filteredProducts = products.filter(product => 
+        product.name.toLowerCase().includes(query.toLowerCase())
+    );
+    renderProducts(filteredProducts); // Відображаємо відфільтровані товари
 }
 
-function renderProducts() {
+// Обробник події для поля пошуку
+document.getElementById('search-bar').addEventListener('input', (event) => {
+    const searchQuery = event.target.value.trim(); // Отримуємо текст з поля пошуку
+    searchProducts(searchQuery); // Викликаємо функцію пошуку
+});
+function renderProducts(productsToRender = products) {
     const productsList = document.getElementById('products-list');
     productsList.innerHTML = '';
 
-    products.forEach(product => {
+    productsToRender.forEach(product => {
         const productCard = document.createElement('div');
         productCard.classList.add('product-card');
         productCard.innerHTML = `
@@ -111,7 +120,7 @@ renderProducts();
 
 document.getElementById('toggle-cart-button').addEventListener('click', () => {
     const cartSection = document.getElementById('cart-section');
-    cartSection.style.display = cartSection.style.display === 'none' ? 'block' : 'none';
+    cartSection.style.display = cartSection.style.display === 'none' ? 'flex' : 'none';
 });
 
 document.getElementById('checkout-button').addEventListener('click', processPayment);

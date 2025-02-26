@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const cartTotal = document.getElementById('cartTotal');
     const checkoutBtn = document.getElementById('checkoutBtn');
     
-    // Display products
     products.forEach((product) => {
         const productElement = document.createElement('div');
         productElement.classList.add('product-card');
@@ -54,16 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCart();
     }
 
-    // Remove from cart
     function removeFromCart(index) {
         cart.splice(index, 1);
         updateCart();
     }
-    function clearCart(){
-        cart=[]
-        updateCart();
-    }
-    // Update cart display
+
+
     function updateCart() {
         cartItemsList.innerHTML = '';
         let total = 0;
@@ -83,27 +78,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
         cartTotal.textContent = total;
 
-        // Disable checkout if cart is empty
         checkoutBtn.disabled = cart.length === 0;
     }
 
-    // Show cart modal
     cartIcon.addEventListener('click', () => {
         cartModal.classList.add('show');
     });
 
-    // Close cart modal
     closeCart.addEventListener('click', () => {
         cartModal.classList.remove('show');
     });
 
-    // Checkout (just a basic alert for now)
-    checkoutBtn.addEventListener('click', () => {
-        if (cart.length === 0) {
-            alert("Ваш кошик порожній!");
-        } else {
-            alert("Переходимо до оформлення замовлення...");
-            clearCart()
-        }
-    });
+checkoutBtn.addEventListener('click', () => {
+    if (cart.length === 0) {
+        alert("Ваш кошик порожній!");
+    } else {
+        alert("Замовлення успішно оформлено! Дякуємо за покупку!");
+        cart = []; 
+        updateCart(); 
+        cartModal.classList.remove('show'); 
+    }
+});
 });

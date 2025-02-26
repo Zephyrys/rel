@@ -13,6 +13,12 @@
     </header>
 
     <main>
+        <nav class="info-nav">
+            <a href="#about-us">Про нас</a>
+            <a href="#delivery">Доставка</a>
+            <a href="#contacts">Контакти</a>
+        </nav>
+
         <div class="categories">
         </div>
 
@@ -23,10 +29,20 @@
         <div class="game-container">
         </div>
 
-        <div class="about-us">
-            <h2>About Us</h2>
+        <section id="about-us" class="info-section">
+            <h2>Про нас</h2>
             <p>Ласкаво просимо до Магазину Ігор, вашого єдиного місця для найкращого ігрового досвіду. Незалежно від того, чи є ви casual-геймером або хардкорним ентузіастом, ми маємо щось для вас. Насолоджуйтесь безкоштовними іграми, епічними пригодами та швидкісними гоночними іграми. Перегляньте нашу колекцію і починайте прямо зараз!</p>
-        </div>
+        </section>
+
+        <section id="delivery" class="info-section">
+            <h2>Доставка</h2>
+            <p>Ми пропонуємо швидку та зручну доставку цифрових ключів для ігор. Після оплати ви отримаєте ключ на електронну пошту протягом кількох хвилин. Для фізичних товарів доступна доставка по всій Україні.</p>
+        </section>
+
+        <section id="contacts" class="info-section">
+            <h2>Контакти</h2>
+            <p>Зв'яжіться з нами за телефоном: <strong>+3808005553535</strong> або напишіть на email: <strong>info@gameshop.com</strong>. Ми працюємо щодня з 9:00 до 18:00.</p>
+        </section>
 
         <div class="cart">
             <h2>Your Cart</h2>
@@ -34,6 +50,7 @@
             <p>Total: <span id="total-price">0</span> UAH</p>
             <button id="checkout-btn">Замовити</button>
         </div>
+
         <div id="order-popup" class="popup">
             <div class="popup-content">
                 <p id="order-message"></p>
@@ -51,4 +68,3 @@
 
 </body>
 </html>
-
